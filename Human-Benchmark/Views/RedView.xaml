@@ -11,7 +11,7 @@
         <StackPanel VerticalAlignment="Center">
             <Label Content="{md:PackIcon Kind=DotsHorizontal, Size=80}" />
             <Label Content="Wait for Green"
-                   FontSize="30"/>
+                   FontSize="30" />
         </StackPanel>
     </Grid>
 </UserControl>

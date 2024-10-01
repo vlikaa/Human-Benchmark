@@ -18,6 +18,12 @@
         <DataTemplate DataType="{x:Type vm:GreenViewModel}">
             <v:GreenView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ResultViewModel}">
+            <v:ResultView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TotalResultViewModel}">
+            <v:TotalResultView />
+        </DataTemplate>
         
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White" />

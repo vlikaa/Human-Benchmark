@@ -12,7 +12,7 @@ public partial class GreenViewModel(ViewModelFactory factory) : BaseViewModel
 	[RelayCommand]
 	private void StopTimer()
 	{
-		WeakReferenceMessenger.Default.Send(new StopTimerMessage());
+		WeakReferenceMessenger.Default.Send(new StopPeriodMessage());
 
 		WeakReferenceMessenger.Default.Send(new ChangeViewModelMessage(factory.Create(typeof(ResultViewModel))));
 	}

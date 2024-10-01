@@ -3,10 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:Human_Benchmark.Views"
+             xmlns:vm="clr-namespace:Human_Benchmark.ViewModels"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:GreenViewModel, IsDesignTimeCreatable=False}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <Grid Background="Green">
+        <StackPanel VerticalAlignment="Center">
+            <Label Content="{md:PackIcon Kind=DotsHorizontal, Size=80}" />
+            <Label Content="Click!"
+                   FontSize="30" />
+        </StackPanel>
         
+        <b:Interaction.Triggers>
+            <b:EventTrigger EventName="MouseDown">
+                <b:InvokeCommandAction Command="{Binding StopTimerCommand}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=ListBox}}" />
+            </b:EventTrigger>
+        </b:Interaction.Triggers>
     </Grid>
 </UserControl>

@@ -34,3 +34,7 @@ C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-wind
 C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Views\GreenView.baml
 C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Views\RedView.baml
 C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Human-Benchmark.sourcelink.json
+C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Views\ResultView.g.cs
+C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Views\ResultView.baml
+C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Views\TotalResultView.g.cs
+C:\Users\msi\RiderProjects\Human-Benchmark\Human-Benchmark\obj\Debug\net8.0-windows\Views\TotalResultView.baml

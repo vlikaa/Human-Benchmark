@@ -18,6 +18,9 @@ public partial class RedViewModel : BaseViewModel
 				{
 					WeakReferenceMessenger.Default
 						.Send(new ChangeViewModelMessage(factory.Create(typeof(GreenViewModel))));
+					
+					WeakReferenceMessenger.Default
+						.Send(new StartPeriodMessage());
 				};
 				
 				_timer.Start();
