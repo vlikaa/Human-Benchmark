@@ -14,5 +14,8 @@ public partial class StartViewModel(ViewModelFactory factory) : BaseViewModel
 	{
 		WeakReferenceMessenger.Default
 			.Send(new ChangeViewModelMessage(factory.Create(typeof(RedViewModel))));
+		
+		WeakReferenceMessenger.Default
+			.Send(new StartTimerMessage());
 	}
 }
