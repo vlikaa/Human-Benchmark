@@ -9,15 +9,6 @@
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:StartViewModel, IsDesignTimeCreatable=False}"
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.Resources>
-        <Style TargetType="Label">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="FontWeight" Value="700" />
-            <Setter Property="FontSize" Value="15" />
-        </Style>
-    </UserControl.Resources>
-    
     <Grid Background="#2583C7">
         <StackPanel VerticalAlignment="Center">
             <Label Content="{md:PackIcon Kind=ThunderCircle, Size=60}" />

@@ -12,7 +12,6 @@ public partial class StartViewModel(ViewModelFactory factory) : BaseViewModel
 	[RelayCommand]
 	private void OpenRedView()
 	{
-		Console.WriteLine("HI");
 		WeakReferenceMessenger.Default
 			.Send(new ChangeViewModelMessage(factory.Create(typeof(RedViewModel))));
 	}

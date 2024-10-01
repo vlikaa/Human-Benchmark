@@ -18,6 +18,13 @@
         <DataTemplate DataType="{x:Type vm:GreenViewModel}">
             <v:GreenView />
         </DataTemplate>
+        
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="700" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
     </Window.Resources>
     
     <ContentPresenter Content="{Binding ViewModel}"/>
