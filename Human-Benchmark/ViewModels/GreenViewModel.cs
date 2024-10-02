@@ -13,7 +13,16 @@ public partial class GreenViewModel(ViewModelFactory factory) : BaseViewModel
 	private void StopTimer()
 	{
 		WeakReferenceMessenger.Default.Send(new StopPeriodMessage());
+		
+		if (++_lap >= 5)
+		{
+			_lap = 0;
+			
+			return;
+		}
 
 		WeakReferenceMessenger.Default.Send(new ChangeViewModelMessage(factory.Create(typeof(ResultViewModel))));
 	}
+
+	private int _lap;
 }

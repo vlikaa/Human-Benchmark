@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Human_Benchmark;
 
-public partial class App : Application
+public partial class App
 {
-	private ServiceCollection _serviceCollection = [];
+	private readonly ServiceCollection _serviceCollection = [];
 	private static ServiceProvider? _serviceProvider;
 
 	public static ServiceProvider ServiceProvider => _serviceProvider!;

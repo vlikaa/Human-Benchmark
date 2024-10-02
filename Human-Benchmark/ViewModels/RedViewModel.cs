@@ -13,7 +13,8 @@ public partial class RedViewModel : BaseViewModel
 		WeakReferenceMessenger.Default.Register<StartTimerMessage>(this,
 			(_, _) =>
 			{
-				_timer.Interval = _random.Next(1500, 5000);
+				// _timer.Interval = _random.Next(1500, 5000);
+				_timer.Interval = _random.Next(500, 500);
 				_timer.Elapsed += (_, _) =>
 				{
 					WeakReferenceMessenger.Default

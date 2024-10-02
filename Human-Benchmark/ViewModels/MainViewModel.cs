@@ -1,11 +1,9 @@
-﻿using System.Runtime.InteropServices.JavaScript;
-using System.Windows;
+﻿using System.Windows;
+using Human_Benchmark.Views;
 using Human_Benchmark.Services;
 using Human_Benchmark.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Human_Benchmark.Views;
-using MaterialDesignThemes.Wpf;
 
 namespace Human_Benchmark.ViewModels;
 
@@ -35,28 +33,39 @@ public partial class MainViewModel : BaseViewModel
 
 				var reactionTime = (stopTime - _startTime).TotalMilliseconds / 1000;
 
-				var resultString = Math.Round(reactionTime, 3) + " ms";		
+				var roundResult = Math.Round(reactionTime, 3);		
+				
+				var resultString = roundResult + " ms";		
 				
 				WeakReferenceMessenger.Default.Send(new PassIntervalMessage(resultString));
 				
 				if (_correctIterationNumber < IterationCount - 1)
 				{
-					_reactionTimes[_correctIterationNumber++] = reactionTime;
+					_reactionTimes[_correctIterationNumber++] = roundResult;
 					
 					return;
 				}
+				
+				_reactionTimes[_correctIterationNumber++] = roundResult;
 
 				var view = new TotalResultView
 				{
-					WindowStartupLocation = WindowStartupLocation.CenterScreen
+					WindowStartupLocation = WindowStartupLocation.CenterScreen,
+					DataContext = factory.Create(typeof(TotalResultViewModel))
 				};
+
+				WeakReferenceMessenger.Default.Send(new PassResultsMessage(_reactionTimes));
+				WeakReferenceMessenger.Default.Send(new ChangeViewModelMessage(factory.Create(typeof(StartViewModel))));
+				
+				_correctIterationNumber = 0;
+				_reactionTimes = new double[5];
 
 				view.ShowDialog();
 			});
 	}
 
 	private DateTime _startTime;
-	private const int IterationCount = 0;
+	private const int IterationCount = 5;
 	private int _correctIterationNumber;
 	private double[] _reactionTimes = new double[5];
 	[ObservableProperty] private BaseViewModel _viewModel;
